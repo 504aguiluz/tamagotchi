@@ -1,0 +1,84 @@
+* {
+    border: 3px solid red;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: dark chartreuse;
+    background-image: url('img/8bit bkg japanese street.jpeg');
+
+}
+
+#controller{
+    flex-shrink: 2;
+    background-color: darkorange;
+    border: 3px solid black;
+    border-radius: 200px 200px 100px 100px;
+    /* height: 800px; */
+}
+
+#window{
+    background-color: skyblue;
+    display: flex;
+    border: 3px solid black;
+    border-radius: 200px 200px 30px 30px;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    width: 700px;
+    display: flex ;
+    margin: 50px;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#luchador {
+    display: flex;
+    height: 200px;
+    /* margin: 25px; */
+    padding: 10px
+}
+
+#score-panel {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 0px 25px 40px 25px;
+    border: 1px solid black;
+    border-radius: 50px;
+    background-color: hotpink;
+    
+}
+
+.scores {
+    color: rgb(200, 255, 145);
+}
+
+#button-panel {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.buttons {
+    color: rgb(200, 255, 145);
+    height: 100px;
+    width: 100px;
+    border: 1px solid black;
+    border-radius: 50px;
+    background-color: hotpink;
+    flex-shrink: 2;
+}
+
+
+label {
+    color: white;
+}
+
+
+/* change fonts */
+/* make backgrounds */
+/* style buttons */
+/* make everything shrink */

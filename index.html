@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tamagotchi!</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="js/app.js" defer></script>
+</head>
+<body>
+    <div id="form">
+        <label for="type">CHOOSE TYPE:</label>
+
+        <select name="type" id="type">
+            <option value="luchador">L U C H A D O R !</option>
+            <option value="salary-man">S A L A R Y   M A N !</option>
+            <option value="mango">M A N G O !</option>
+        </select>
+    </div>
+    <div id="controller" class= "tamagotchi">
+        <div id= "window" class= "tamagotchi">
+            <img id="luchador" src= "css/img/luchador-large.png" alt = "luchador sprite" class="shrink wrap">
+        </div>
+        <div id="score-panel" class= "tamagotchi">
+            <h2 id="hunger" class="scores">hunger:</h2>
+            <h2 id="sleepiness" class="scores">sleepiness:</h2>
+            <h2 id="boredom" class="scores">boredom:</h2>
+            <h2 id="age" class="scores">age:</h2>
+        </div>
+        <div id="button-panel">
+            <button id="eat" class="buttons">eat</button>
+            <button id="sleep" class="buttons">sleep</button>
+            <button id="play" class="buttons">play</button>
+        </div>
+    </div>
+</body>
+</html>
