@@ -25,14 +25,37 @@ console.log('TAMAGOTCHI!!!')
         // Age
     
     // Add buttons to the screen to feed your pet, turn off the lights, and play with your pet.
-    function clickButtons(){
+    // function clickButtons(){
 
-        const eat = document.getElementById('eat').addEventListener('click', eatClick)
-        console.log('eat is clicked')
-    }
+    // }
+let hungerNum = document.getElementById('hunger-num').innerText
+
+function clickEat(){
+    hungerText = document.getElementById('hunger')
+    hungerText.innerText = `hunger: ${Math.max(0,hungerNum--)}`
+}
+
+let sleepNum = document.getElementById('sleep-num').innerText
+
+function clickSleep(){
+    sleepText = document.getElementById('sleepiness')
+    sleepText.innerText = `sleepiness: ${Math.max(0,sleepNum--)}`
+}
+
+let boredomNum = document.getElementById('boredom-num').innerText
+
+function clickPlay(){
+    boredomText = document.getElementById('boredom')
+    boredomText.innerText = `boredom: ${Math.max(0,boredomNum--)}`
+}
+
+    document.getElementById('eat').addEventListener('click', clickEat)
+    document.getElementById('sleep').addEventListener('click', clickSleep)
+    document.getElementById('play').addEventListener('click', clickPlay)
+    
 
 // console.log(eat)
-    // Add the ability to name your pet.
+    // Add the ability to name your pet.git
     
     // Style the page.
     

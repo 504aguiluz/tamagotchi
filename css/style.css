@@ -1,6 +1,6 @@
-* {
+/* * {
     border: 3px solid red;
-}
+} */
 
 body {
     display: flex;
@@ -43,9 +43,9 @@ body {
 
 #score-panel {
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    margin: 0px 25px 40px 25px;
+    /* flex-direction: row; */
+    justify-content: space-around;
+    /* margin: 0px 25px 40px 25px; */
     border: 1px solid black;
     border-radius: 50px;
     background-color: hotpink;
@@ -82,3 +82,4 @@ label {
 /* make backgrounds */
 /* style buttons */
 /* make everything shrink */
+/* make music!!! */
