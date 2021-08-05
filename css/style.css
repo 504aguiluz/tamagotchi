@@ -52,6 +52,12 @@ body {
     
 }
 
+#name-output {
+    display: flex;
+    justify-content: center;
+    color: rgb(200, 255, 145);
+}
+
 .scores {
     color: rgb(200, 255, 145);
 }
@@ -75,6 +81,12 @@ body {
 
 label {
     color: white;
+}
+
+#form {
+    display: flex;
+    flex-direction: column;
+    margin:10px;
 }
 
 

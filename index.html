@@ -10,8 +10,9 @@
 </head>
 <body>
     <div id="form">
+        <input type="text" id="name-input">
+        <button id="start">submit name and start game!</button>
         <label for="type">CHOOSE TYPE:</label>
-
         <select name="type" id="type">
             <option value="luchador">L U C H A D O R !</option>
             <option value="salary-man">S A L A R Y   M A N !</option>
@@ -22,13 +23,14 @@
         <div id= "window" class= "tamagotchi">
             <img id="luchador" src= "css/img/luchador-large.png" alt = "luchador sprite" class="shrink wrap">
         </div>
-        <div id="score-panel" class= "tamagotchi">
-            <h2 id="hunger" class="scores">hunger:<div id='hunger-num'>9</div></h2>
-            <h2 id="sleepiness" class="scores">sleepiness:<div id='sleep-num'>9</div></h2>
-            <h2 id="boredom" class="scores">boredom:<div id='boredom-num'>9</div></h2>
+        <div class= "tamagotchi top-panels"><h1 id="name-output" >name:</h1></div>
+        <div id="score-panel" class= "tamagotchi top-panels">
+            <h2 id="hunger" class="scores">hunger:<div id='hunger-num'>1</div></h2>
+            <h2 id="sleepiness" class="scores">sleepiness:<div id='sleep-num'>1</div></h2>
+            <h2 id="boredom" class="scores">boredom:<div id='boredom-num'>1</div></h2>
             <h2 id="age" class="scores">age:<div id='age-num'>0</div></h2>
         </div>
-        <div id="button-panel">
+        <div id="button-panel" class= "tamagotchi">
             <button id="eat" class="buttons">eat</button>
             <button id="sleep" class="buttons">sleep</button>
             <button id="play" class="buttons">play</button>
