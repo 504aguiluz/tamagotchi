@@ -1,44 +1,43 @@
-/* * {
-    border: 3px solid red;
-} */
+* {
+    /* border: 3px solid red; */
+    font-family: 'Indie Flower', cursive;
+    /* -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgb(51, 97, 13); */
+}
 
 body {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+    flex-shrink: 1;
     align-items: center;
     background-color: dark chartreuse;
     background-image: url('img/8bit bkg japanese street.jpeg');
-
 }
 
 #controller{
-    flex-shrink: 2;
     background-color: darkorange;
-    border: 3px solid black;
+    border: 3px solid white;
     border-radius: 200px 200px 100px 100px;
     /* height: 800px; */
+    color: rgb(200, 255, 145);
+    margin: 50px;
+    justify-content: center;
 }
 
 #window{
+    display: flex ;
     background-color: skyblue;
-    display: flex;
-    border: 3px solid black;
+    border: 3px solid rgb(89, 255, 56);
     border-radius: 200px 200px 30px 30px;
     justify-content: center;
     align-items: center;
     height: 400px;
     width: 700px;
-    display: flex ;
     margin: 50px;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-
-#luchador {
-    display: flex;
-    height: 200px;
-    /* margin: 25px; */
-    padding: 10px
+    /* dayt image */
+    background-image: url('img/mikhail-selnihin-full-day-out-light-x4.jpeg');
+    background-size: 95%;
 }
 
 #score-panel {
@@ -46,7 +45,7 @@ body {
     /* flex-direction: row; */
     justify-content: space-around;
     /* margin: 0px 25px 40px 25px; */
-    border: 1px solid black;
+    border: 3px solid rgb(77, 224, 47);
     border-radius: 50px;
     background-color: hotpink;
     
@@ -55,11 +54,6 @@ body {
 #name-output {
     display: flex;
     justify-content: center;
-    color: rgb(200, 255, 145);
-}
-
-.scores {
-    color: rgb(200, 255, 145);
 }
 
 #button-panel {
@@ -68,30 +62,83 @@ body {
     justify-content: space-evenly;
 }
 
+#form {
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    flex-shrink: 1;
+    margin: 20px;
+}
+
+.start-and-name {
+    margin:20px;
+    background-color: rgb(255, 186, 108);
+    color: rgb(77, 0, 150);
+    font-weight: bold;
+    font-size: large;
+
+}
+
+.sign-in {
+    display: flex;
+    background-color:lightpink;
+    border: 3px solid rgb(0, 196, 153);
+    color:rgb(0, 103, 110);
+    flex-direction: column;
+    /* margin:10px; */
+}
+
+.tamagotchi-sprite {
+    display: flex;
+    height: 100px;
+    /* margin: 25px; */
+    /* padding: 10px; */
+}
+
+@keyframes defaultGo {
+    0% {transform: translateX(0%) rotate(0deg)}
+    25% {transform: translateX(-100%)rotate(180deg)}
+    33% {transform: translateX(-100%) translateY(100%)}
+    50% {transform:translateX(100%) translateY(100%) rotate(360deg)}
+    75% {transform: translateX(100%) rotate(540deg)}
+    100% {transform: translateX(0%) rotate(720deg)}
+}
+
+@keyframes idle { 
+    0% {transform: translateX(0);}
+    100% {transform: translateX(0);}
+}
+@keyframes float { 
+    0% {transform: translateY(100%);}
+    100% {transform: translateX(0);}
+}
+
+@keyframes rotate {
+    0% {transform: rotate(0deg)}
+    100% {transform: rotate(720deg)}
+}
+
+
+.scores {
+    
+}
+
 .buttons {
     color: rgb(200, 255, 145);
     height: 100px;
     width: 100px;
-    border: 1px solid black;
+    border: 3px solid rgb(77, 224, 47);
     border-radius: 50px;
     background-color: hotpink;
     flex-shrink: 2;
+    font-size: x-large;
 }
 
 
-label {
-    color: white;
-}
-
-#form {
-    display: flex;
-    flex-direction: column;
-    margin:10px;
-}
 
 
 /* change fonts */
-/* make backgrounds */
+
 /* style buttons */
 /* make everything shrink */
 /* make music!!! */

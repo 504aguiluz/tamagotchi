@@ -10,6 +10,9 @@ let hungerNum = document.getElementById('hunger-num').innerText
 let sleepNum = document.getElementById('sleep-num').innerText
 let boredomNum = document.getElementById('boredom-num').innerText
 let ageNum = document.getElementById('age-num').innerText
+let windowImage = document.getElementById('window')
+let tamagotchi = document.getElementsByClassName('tamagotchi-sprite')
+let spriteType = document.getElementsByClassName('sprite-type')
 
 // Requirements
     // Create a repo for your tomagotchi pet -- done
@@ -17,7 +20,7 @@ let ageNum = document.getElementById('age-num').innerText
     // Create a Class (JS Class, look at your notes if your forget) for your tomagotchi
 
     class Tamagotchi {
-        constructor(name){
+        constructor(){
             this.name = nameInput.value
             this.hunger = hungerNum
             this.sleepiness = sleepNum
@@ -47,6 +50,7 @@ let ageNum = document.getElementById('age-num').innerText
     function startGame(){
         // name character
         nameOutput.innerHTML = `name: ${nameInput.value}`
+        
         // timer with conditinals
         let timer = 0
         const intervalID = setInterval(() => {
@@ -62,7 +66,19 @@ let ageNum = document.getElementById('age-num').innerText
             } if (timer % 10 === 0){
                 // // increment age every 10s
                 ageText.innerText = `age: ${Math.max(0,ageNum++)}`
+                document.querySelector('.tamagotchi-sprite').style.height = '150px'
+            } if(sleepNum < 5){
+                windowImage.style.backgroundImage= "url('../css/img/mikhail-selnihin-full-day-out-light-x4.jpeg')"
+            } if(sleepNum > 5){
+                windowImage.style.backgroundImage= "url('../css/img/mikhail-selnihin-full-night-out-x4.jpeg')"
+            } if(hungerNum > 5){
+                windowImage.style.backgroundImage= "url('../css/img/food-background.jpg')"
+            } if(boredomNum < 5){
+                document.querySelector('.tamagotchi-sprite').style.animation = "float 1s ease-in forwards infinite alternate"
+            } if(boredomNum > 5){
+                document.querySelector('.tamagotchi-sprite').style.animation = "defaultGo 1s ease-in forwards infinite"
             } if (hungerNum > 10 || sleepNum > 10 || boredomNum > 10){
+                document.querySelector('.tamagotchi-sprite').style.animation = "idle"
                 clearInterval(intervalID)
                 alert(`Game Over! ${nameInput.value} is dead!`)
             }
@@ -70,12 +86,12 @@ let ageNum = document.getElementById('age-num').innerText
 
     }
 
+
     // event listeners
     document.getElementById('eat').addEventListener('click', clickEat)
     document.getElementById('sleep').addEventListener('click', clickSleep)
     document.getElementById('play').addEventListener('click', clickPlay)
     document.getElementById('start').addEventListener('click', startGame)
-    
     
     // Morph your pet at certain ages.
     

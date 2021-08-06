@@ -4,37 +4,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tamagotchi!</title>
+    <title>T A M A G O T C H I!</title>
     <link rel="stylesheet" href="css/style.css">
     <script type="text/javascript" src="js/app.js" defer></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+    </style>
 </head>
 <body>
-    <div id="form">
-        <input type="text" id="name-input">
-        <button id="start">submit name and start game!</button>
+    <div id="form" class="sign-in">
+        <button id="start" class="start-and-name">NAME AND START!</button>
+        <input type="text" id="name-input" class="start-and-name">
         <label for="type">CHOOSE TYPE:</label>
-        <select name="type" id="type">
-            <option value="luchador">L U C H A D O R !</option>
-            <option value="salary-man">S A L A R Y   M A N !</option>
-            <option value="mango">M A N G O !</option>
+        <select name="type" id="type" class="sign-in">
+            <option value="luchador" class="sprite-type">L U C H A D O R !</option>
+            <option value="salary-man" class="sprite-type">S A L A R Y   M A N !</option>
+            <option value="mango" class="sprite-type">M A N G O !</option>
         </select>
     </div>
-    <div id="controller" class= "tamagotchi">
-        <div id= "window" class= "tamagotchi">
-            <img id="luchador" src= "css/img/luchador-large.png" alt = "luchador sprite" class="shrink wrap">
+    <div id="controller" class= "controller-elements">
+        <div id="window" class= "controller-elements">
+            <img id="luchador" class = "tamagotchi-sprite anim" src= "css/img/luchador-large.png" alt = "sprite" class="shrink wrap">
         </div>
-        <div class= "tamagotchi top-panels"><h1 id="name-output" >name:</h1></div>
-        <div id="score-panel" class= "tamagotchi top-panels">
+        <div class="controller-elements top-panels"><h1 id="name-output" >name:</h1></div>
+        <div id="score-panel" class= "controller-elements top-panels">
             <h2 id="hunger" class="scores">hunger:<div id='hunger-num'>1</div></h2>
             <h2 id="sleepiness" class="scores">sleepiness:<div id='sleep-num'>1</div></h2>
             <h2 id="boredom" class="scores">boredom:<div id='boredom-num'>1</div></h2>
             <h2 id="age" class="scores">age:<div id='age-num'>0</div></h2>
         </div>
-        <div id="button-panel" class= "tamagotchi">
+        <div id="button-panel" class= "controller-elements">
             <button id="eat" class="buttons">eat</button>
             <button id="sleep" class="buttons">sleep</button>
             <button id="play" class="buttons">play</button>
+            <!-- <button id="animations" class="buttons">animations</button> -->
         </div>
+
     </div>
 </body>
 </html>
