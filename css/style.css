@@ -1,6 +1,4 @@
 * {
-    /* border: 3px solid red; */
-    /* animation: fadeIn 5s; */
     font-family: 'Press Start 2P', cursive;
 }
 
@@ -8,12 +6,11 @@ body {
     display: flex;
     justify-content: center;
     flex-direction: row;
-    /* flex-wrap: wrap; */
-    /* flex-shrink: 1; */
     align-items: center;
     background-color: dark chartreuse;
     background-image: url('img/8bit bkg japanese street.jpeg');
     max-width: 1400px;
+    background-size: 50% auto;
 }
 
 #controller{
@@ -48,9 +45,7 @@ body {
 
 #score-panel {
     display: flex;
-    /* flex-direction: row; */
     justify-content: space-around;
-    /* margin: 0px 25px 40px 25px; */
     border: 3px solid rgb(77, 224, 47);
     border-radius: 50px;
     background-color: hotpink;

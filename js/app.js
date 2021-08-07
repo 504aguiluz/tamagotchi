@@ -58,6 +58,7 @@ function nameTamagotchi(){
 // starts game on button click
 function startGame(){
     let type = prompt('CHOOSE TYPE:', 'luchador/salaryman/mango')
+
     if (type.toLowerCase() == 'salaryman'){
         document.getElementById('luchador').src = "css/img/salaryman-large.png"
     } if (type.toLowerCase() == 'mango'){
@@ -101,7 +102,7 @@ function startGame(){
             document.querySelector('.tamagotchi-sprite').style.animation = "float 1s ease-in forwards infinite alternate"
             // tama is bored and anxious
         } if(tama.boredom > 5){
-            document.querySelector('.tamagotchi-sprite').style.animation = "defaultGo 1s ease-in forwards infinite"
+            document.querySelector('.tamagotchi-sprite').style.animation = "defaultGo 1s ease-in forwards infinite alternate"
             // tama is dead
         } if (tama.hunger > 10 || tama.sleepiness > 10 || tama.boredom > 10){
             document.querySelector('.tamagotchi-sprite').style.animation = "idle"
@@ -119,3 +120,13 @@ function startGame(){
     document.getElementById('sleep').addEventListener('click', tama.clickSleep)
     document.getElementById('play').addEventListener('click', tama.clickPlay)
     document.getElementById('start').addEventListener('click', startGame)
+
+
+    // things to add/debug:
+        // death animation
+        // dropbown type input configuration
+        // background changes with type choice
+        // loop audio seamlessly
+        // win condition
+        // mobile compatibility
+        // make impossible to decrement below zero
