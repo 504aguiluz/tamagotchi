@@ -1,8 +1,7 @@
 * {
     /* border: 3px solid red; */
-    font-family: 'Indie Flower', cursive;
-    /* -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: rgb(51, 97, 13); */
+    /* animation: fadeIn 5s; */
+    font-family: 'Press Start 2P', cursive;
 }
 
 body {
@@ -16,6 +15,8 @@ body {
 }
 
 #controller{
+    display: flex;
+    flex-direction: column;
     background-color: darkorange;
     border: 3px solid white;
     border-radius: 200px 200px 100px 100px;
@@ -23,6 +24,7 @@ body {
     color: rgb(200, 255, 145);
     margin: 50px;
     justify-content: center;
+    align-items: center;
 }
 
 #window{
@@ -60,6 +62,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    
 }
 
 #form {
@@ -68,6 +71,7 @@ body {
     flex-grow: 1;
     flex-shrink: 1;
     margin: 20px;
+    max-width: 500px;
 }
 
 .start-and-name {
@@ -118,9 +122,13 @@ body {
     100% {transform: rotate(720deg)}
 }
 
+@keyframes fadeIn {
+    0% {transform: opacity(0)}
+    100% {transform: opacity(1)}
+}
 
 .scores {
-    
+    margin: 20px;
 }
 
 .buttons {
@@ -131,7 +139,7 @@ body {
     border-radius: 50px;
     background-color: hotpink;
     flex-shrink: 2;
-    font-size: x-large;
+    font-size: medium;
 }
 
 

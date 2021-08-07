@@ -13,6 +13,15 @@ let ageNum = document.getElementById('age-num').innerText
 let windowImage = document.getElementById('window')
 let tamagotchi = document.getElementsByClassName('tamagotchi-sprite')
 let spriteType = document.getElementsByClassName('sprite-type')
+const click2 = document.getElementById('click2')
+const bells = document.getElementById('game-over-bells')
+const ageUp = document.getElementById('age-up')
+const themeMusic = document.getElementById('theme-music')
+const beep = document.getElementById('beep')
+const intro = document.getElementById('intro')
+const beepDown = document.getElementById('beep-down')
+const sweepUp = document.getElementById('sweep-up')
+
 
 // Requirements
     // Create a repo for your tomagotchi pet -- done
@@ -21,76 +30,96 @@ let spriteType = document.getElementsByClassName('sprite-type')
 
     class Tamagotchi {
         constructor(){
-            this.name = nameInput.value
+            this.name = ''
             this.hunger = hungerNum
             this.sleepiness = sleepNum
             this.boredom = boredomNum
             this.age = ageNum
-            this.timer = 0
         }
-        newTamagotchi(name){
-            // Instatiate your Tomagotchi
-            const tamagotchi = new Tamagotchi(name)
-            console.log(name)   
-        }   
-    }
-    
-    function clickEat(){
-        hungerText.innerText = `hunger: ${Math.max(0,hungerNum--)}`
-    }
-    
-    function clickSleep(){
-        sleepText.innerText = `sleepiness: ${Math.max(0,sleepNum--)}`
-    }
-    
-    function clickPlay(){
-        boredomText.innerText = `boredom: ${Math.max(0,boredomNum--)}`
-    }
-    
-    function startGame(){
-        // name character
-        nameOutput.innerHTML = `name: ${nameInput.value}`
+        clickEat(){
+            beep.play()
+            hungerText.innerText = `hunger: ${Math.max(0,tama.hunger--)}`;
+        }
         
-        // timer with conditinals
-        let timer = 0
-        const intervalID = setInterval(() => {
-            timer++
-            // // increment hunger each 1000ms (1s)
-            hungerText.innerText = `hunger: ${Math.max(0,hungerNum++)}`
-            if (timer % 2 === 0){
-                // // increment boredom every 2s
-                boredomText.innerText = `boredom: ${Math.max(0,boredomNum++)}`
-            } if (timer % 3 === 0){
-                // // increment sleepiness every 3s
-                sleepText.innerText = `sleepiness: ${Math.max(0,sleepNum++)}`
-            } if (timer % 10 === 0){
-                // // increment age every 10s
-                ageText.innerText = `age: ${Math.max(0,ageNum++)}`
-                document.querySelector('.tamagotchi-sprite').style.height = '150px'
-            } if(sleepNum < 5){
-                windowImage.style.backgroundImage= "url('../css/img/mikhail-selnihin-full-day-out-light-x4.jpeg')"
-            } if(sleepNum > 5){
-                windowImage.style.backgroundImage= "url('../css/img/mikhail-selnihin-full-night-out-x4.jpeg')"
-            } if(hungerNum > 5){
-                windowImage.style.backgroundImage= "url('../css/img/food-background.jpg')"
-            } if(boredomNum < 5){
-                document.querySelector('.tamagotchi-sprite').style.animation = "float 1s ease-in forwards infinite alternate"
-            } if(boredomNum > 5){
-                document.querySelector('.tamagotchi-sprite').style.animation = "defaultGo 1s ease-in forwards infinite"
-            } if (hungerNum > 10 || sleepNum > 10 || boredomNum > 10){
-                document.querySelector('.tamagotchi-sprite').style.animation = "idle"
-                clearInterval(intervalID)
-                alert(`Game Over! ${nameInput.value} is dead!`)
-            }
-        }, 1000);
-
+        clickSleep(){
+            beepDown.play()
+            sleepText.innerText = `sleepiness: ${Math.max(0,tama.sleepiness--)}`
+        }
+        
+        clickPlay(){
+            sweepUp.play()
+            boredomText.innerText = `boredom: ${Math.max(0,tama.boredom--)}`
+        }
+        gameOverAnnounce(){
+            const gameOverDiv = document.getElementById('game-over-div')
+            gameOverDiv.innerHTML = `GAME OVER!!! ${tama.name} is dead!!!`
+            gameOverDiv.style.display = "block"
+        }
     }
+    
+    // newTamagotchi()
+
+const tama = new Tamagotchi()
+
+
+function nameTamagotchi(){
+    tama.name = nameInput.value
+    console.log(tama)
+}
+   
+// intro.play()
+
+function startGame(){
+    // name character
+    nameOutput.innerHTML = `name: ${nameInput.value}`
+    nameTamagotchi()
+    themeMusic.loop = true
+    themeMusic.play()
+    // timer with conditinals
+    let timer = 0
+    const intervalID = setInterval(() => {
+        timer++
+        // // increment hunger each 1000ms (1s)
+        hungerText.innerText = `hunger: ${Math.max(0,tama.hunger++)}`
+        if (timer % 2 === 0){
+            // // increment boredom every 2s
+            boredomText.innerText = `boredom: ${Math.max(0,tama.boredom++)}`
+        } if (timer % 3 === 0){
+            // // increment sleepiness every 3s
+            sleepText.innerText = `sleepiness: ${Math.max(0,tama.sleepiness++)}`
+        } if (timer % 10 === 0){
+            // // increment age every 10s
+            ageText.innerText = `age: ${Math.max(0,tama.age++)}`
+            ageUp.play()
+            document.querySelector('.tamagotchi-sprite').style.height = '150px'
+        } if(tama.sleep < 5){
+            windowImage.style.backgroundImage= "url('../css/img/mikhail-selnihin-full-day-out-light-x4.jpeg')"
+        } if(tama.sleep > 5){
+            windowImage.style.backgroundImage= "url('../css/img/mikhail-selnihin-full-night-out-x4.jpeg')"
+        } if(tama.hunger > 5){
+            windowImage.style.backgroundImage= "url('../css/img/food-background.jpg')"
+        } if(tama.hunger < 5){
+            windowImage.style.backgroundImage= "url('../css/img/mikhail-selnihin-full-day-out-light-x4.jpeg')"
+        } if(tama.boredom < 5){
+            document.querySelector('.tamagotchi-sprite').style.animation = "float 1s ease-in forwards infinite alternate"
+        } if(tama.boredom > 5){
+            document.querySelector('.tamagotchi-sprite').style.animation = "defaultGo 1s ease-in forwards infinite"
+        } if (tama.hunger > 10 || tama.sleepiness > 10 || tama.boredom > 10){
+            document.querySelector('.tamagotchi-sprite').style.animation = "idle"
+            themeMusic.loop = false
+            bells.play()
+            clearInterval(intervalID)
+            alert(`Game Over! ${tama.name} is dead!`)
+            // gameOverAnnounce()
+        }
+    }, 1000);
+}
 
 
     // event listeners
-    document.getElementById('eat').addEventListener('click', clickEat)
-    document.getElementById('sleep').addEventListener('click', clickSleep)
-    document.getElementById('play').addEventListener('click', clickPlay)
+    document.getElementById('eat').addEventListener('click', tama.clickEat)
+    document.getElementById('sleep').addEventListener('click', tama.clickSleep)
+    document.getElementById('play').addEventListener('click', tama.clickPlay)
     document.getElementById('start').addEventListener('click', startGame)
     
     // Morph your pet at certain ages.

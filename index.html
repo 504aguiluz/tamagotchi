@@ -8,24 +8,25 @@
     <link rel="stylesheet" href="css/style.css">
     <script type="text/javascript" src="js/app.js" defer></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
-    </style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+        </style>
 </head>
 <body>
     <div id="form" class="sign-in">
         <button id="start" class="start-and-name">NAME AND START!</button>
         <input type="text" id="name-input" class="start-and-name">
-        <label for="type">CHOOSE TYPE:</label>
+        <!-- <label for="type">CHOOSE TYPE:</label>
         <select name="type" id="type" class="sign-in">
             <option value="luchador" class="sprite-type">L U C H A D O R !</option>
             <option value="salary-man" class="sprite-type">S A L A R Y   M A N !</option>
             <option value="mango" class="sprite-type">M A N G O !</option>
-        </select>
+        </select> -->
     </div>
     <div id="controller" class= "controller-elements">
         <div id="window" class= "controller-elements">
             <img id="luchador" class = "tamagotchi-sprite anim" src= "css/img/luchador-large.png" alt = "sprite" class="shrink wrap">
         </div>
+        <h1 id="game-over-div"></h1>
         <div class="controller-elements top-panels"><h1 id="name-output" >name:</h1></div>
         <div id="score-panel" class= "controller-elements top-panels">
             <h2 id="hunger" class="scores">hunger:<div id='hunger-num'>1</div></h2>
@@ -34,6 +35,30 @@
             <h2 id="age" class="scores">age:<div id='age-num'>0</div></h2>
         </div>
         <div id="button-panel" class= "controller-elements">
+            <!-- <audio id="click2">
+                <source src="css/audio/click2.mp3">
+            </audio> -->
+            <audio id="beep">
+                <source src="css/audio/beep.mp3">
+            </audio>
+            <audio id="beep-down">
+                <source src="css/audio/beep-down.mp3">
+            </audio>
+            <audio id="theme-music">
+                <source src="css/audio/theme-music.mp3">
+            </audio>
+            <audio id="intro">
+                <source src="css/audio/intro.mp3">
+            </audio>
+            <audio id="sweep-up">
+                <source src="css/audio/sweep-up.mp3">
+            </audio>
+            <audio id="game-over-bells">
+                <source src="css/audio/game-over-bells.mp3">
+            </audio>
+            <audio id="age-up">
+                <source src="css/audio/age-up.mp3">
+            </audio>
             <button id="eat" class="buttons">eat</button>
             <button id="sleep" class="buttons">sleep</button>
             <button id="play" class="buttons">play</button>
