@@ -7,24 +7,28 @@
 body {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
-    flex-shrink: 1;
+    flex-direction: row;
+    /* flex-wrap: wrap; */
+    /* flex-shrink: 1; */
     align-items: center;
     background-color: dark chartreuse;
     background-image: url('img/8bit bkg japanese street.jpeg');
+    max-width: 1400px;
 }
 
 #controller{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: darkorange;
     border: 3px solid white;
     border-radius: 200px 200px 100px 100px;
     /* height: 800px; */
     color: rgb(200, 255, 145);
     margin: 50px;
-    justify-content: center;
-    align-items: center;
+    max-height: 600px;
+    max-width: 800px;
 }
 
 #window{
@@ -34,9 +38,9 @@ body {
     border-radius: 200px 200px 30px 30px;
     justify-content: center;
     align-items: center;
-    height: 400px;
+    height: 300px;
     width: 700px;
-    margin: 50px;
+    margin: 20px;
     /* dayt image */
     background-image: url('img/mikhail-selnihin-full-day-out-light-x4.jpeg');
     background-size: 95%;
@@ -50,6 +54,9 @@ body {
     border: 3px solid rgb(77, 224, 47);
     border-radius: 50px;
     background-color: hotpink;
+    margin-left: 30px;
+    margin-right: 30px;
+    max-width: 600px;
     
 }
 
@@ -62,7 +69,6 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    
 }
 
 #form {
@@ -89,14 +95,12 @@ body {
     border: 3px solid rgb(0, 196, 153);
     color:rgb(0, 103, 110);
     flex-direction: column;
-    /* margin:10px; */
 }
 
 .tamagotchi-sprite {
     display: flex;
     height: 100px;
-    /* margin: 25px; */
-    /* padding: 10px; */
+    margin-bottom: 150px;
 }
 
 @keyframes defaultGo {
@@ -129,6 +133,7 @@ body {
 
 .scores {
     margin: 20px;
+    font-size: small;
 }
 
 .buttons {
@@ -140,13 +145,5 @@ body {
     background-color: hotpink;
     flex-shrink: 2;
     font-size: medium;
+    margin: 25px 50px 25px 50px;
 }
-
-
-
-
-/* change fonts */
-
-/* style buttons */
-/* make everything shrink */
-/* make music!!! */
